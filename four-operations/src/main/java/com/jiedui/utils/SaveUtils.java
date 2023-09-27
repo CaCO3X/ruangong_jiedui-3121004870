@@ -47,7 +47,9 @@ public class SaveUtils {
         }
     }
 
-    //计算出答案并将答案保存到所设的答案文件中
+    /**
+     * 计算出答案并将答案保存到所设的答案文件中
+     */
     public static void calculateAndSaveAnswers(List<String> exercises) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/Answers.txt"))) {
             int count = 1;
@@ -67,7 +69,9 @@ public class SaveUtils {
         }
     }
 
-    //保存答题情况
+    /**
+     * 保存答题情况
+     */
     public static void saveGrade(int correctCount, StringBuilder correctBuilder, int wrongCount, StringBuilder wrongBuilder) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/Grade.txt"))) {
             writer.write("====你的答题情况====");
@@ -80,7 +84,9 @@ public class SaveUtils {
         }
     }
 
-    //使用Apache Commons Math库中的Fraction类来实现小数转化为分数
+    /**
+     * 使用Apache Commons Math库中的Fraction类来实现小数转化为分数
+     */
     private static String formatFraction(double result) {
         if (result%1==0) {
             int result_1=(int)result;

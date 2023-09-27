@@ -9,7 +9,11 @@ import java.util.List;
  * @author lyp 2023/09/27
  */
 public class CheckUtils {
-    //确定用户的答题对错情况
+    /**
+     * 确定用户的答题对错情况
+     * @param exerciseFile 正确答案文件
+     * @param myanswerFile 回答文件
+     */
     public static void checkAnswers(String exerciseFile, String myanswerFile) {
         try {
             List<String> exercises = FileUtils.readFile(exerciseFile);
@@ -55,7 +59,12 @@ public class CheckUtils {
         }
     }
 
-    //比较算术表达式中操作符的顺序
+    /**
+     * 比较算术表达式中操作符的顺序
+     * @param operator1 操作符1
+     * @param operator2 操作符2
+     * @return int 返回标识
+     */
     public static int compareOperatorPrecedence(String operator1, String operator2) {
         if ((operator1.equals("+") || operator1.equals("-")) &&
                 (operator2.equals("*") || operator2.equals("÷"))) {

@@ -86,7 +86,10 @@ public class GenerateUtils {
         }
     }
 
-    //计算后缀表达式的值
+    /**
+     * 计算后缀表达式的值
+     * @return double 返回值
+     */
     private static double evaluatePostfixExpression(List<String> postfix) {
         List<Double> operandStack = new ArrayList<>();
 
@@ -117,7 +120,9 @@ public class GenerateUtils {
         return operandStack.get(0);
     }
 
-    //将表达式中的分数形式转化为具体的值便于计算
+    /**
+     * 将表达式中的分数形式转化为具体的值便于计算
+     */
     private static double parseNumber(String term) {
         if (term.contains("'")) {//判断是否有带分数
             String[] parts = term.split("'");//分离带分数中的整数和分数部分
@@ -135,7 +140,9 @@ public class GenerateUtils {
         }
     }
 
-    //判断是否是操作符
+    /**
+     * 判断是否是操作符
+     */
     private static boolean isOperator(String term) {
         for (String operator : OPERATORS) {
             if (operator.equals(term)) {
@@ -145,7 +152,9 @@ public class GenerateUtils {
         return false;
     }
 
-    //将表达式转换为后缀表达式
+    /**
+     * 将表达式转换为后缀表达式
+     */
     private static List<String> infixToPostfix(String[] terms) {
         List<String> postfix = new ArrayList<>();
         List<String> operatorStack = new ArrayList<>();
@@ -173,7 +182,9 @@ public class GenerateUtils {
         return postfix;
     }
 
-    //计算表达式的函数
+    /**
+     * 计算表达式的函数
+     */
     public static double calculateExpression(String[] terms) {
         List<String> postfix = infixToPostfix(terms);  // 将中缀表达式转换为后缀表达式
         return evaluatePostfixExpression(postfix);  // 计算后缀表达式的值

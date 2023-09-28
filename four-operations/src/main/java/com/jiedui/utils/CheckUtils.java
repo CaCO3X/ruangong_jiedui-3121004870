@@ -28,7 +28,11 @@ public class CheckUtils {
                 double myAnswer;
                 Fraction myAnswer_1;
                 String[] parts = myanswers.get(i).split(":");//分离出用户答案的数值部分
-
+                if (parts.length <= 1){
+                    wrongCount++;//统计错误数目
+                    wrongBuilder.append(i + 1).append("  ");//统计错误题号
+                    continue;
+                }
                 if(parts[1].contains("/")){
                     int numerator = Integer.parseInt(parts[1].split("/")[0]);
                     int denominator = Integer.parseInt(parts[1].split("/")[1]);

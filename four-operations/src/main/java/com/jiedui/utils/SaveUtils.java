@@ -16,7 +16,7 @@ public class SaveUtils {
      * @param exercises 生成的题目
      */
     public static void saveExercises(List<String> exercises) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/Exercises.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/com/jiedui/test/Exercises.txt"))) {
             int count = 1;
 
             for (String exercise : exercises) {
@@ -36,7 +36,7 @@ public class SaveUtils {
     public static void answerExercises(int num){
         int count=1;
 
-        try ( BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/AnswersOfMine.txt"))){
+        try ( BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/com/jiedui/test/AnswersOfMine.txt"))){
             for(int i=0;i<num;i++){
                 writer.write("我的回答"+count+":");
                 writer.newLine();
@@ -51,7 +51,7 @@ public class SaveUtils {
      * 计算出答案并将答案保存到所设的答案文件中
      */
     public static void calculateAndSaveAnswers(List<String> exercises) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/Answers.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/com/jiedui/test/Answers.txt"))) {
             int count = 1;
             writer.write("=====参考答案=====");
             writer.newLine();
@@ -73,7 +73,7 @@ public class SaveUtils {
      * 保存答题情况
      */
     public static void saveGrade(int correctCount, StringBuilder correctBuilder, int wrongCount, StringBuilder wrongBuilder) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ruangong_2/Grade.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/com/jiedui/test/Grade.txt"))) {
             writer.write("====你的答题情况====");
             writer.newLine();
             writer.write("Correct: " + correctCount + " (  " + correctBuilder.toString() + ")");

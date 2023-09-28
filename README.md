@@ -173,9 +173,56 @@ Override如下：
 
 # 五、测试与运行
 
+测试代码如下：
 
+```java
+public class MainTest {
+    @Test
+    public void mainTest(){
+        // 生成10个题目以及范围为6
+        System.out.println(">>>生成问题");
+        System.out.println();
+        String[] args = {"-n","10","-r","6"};
+        Main.main(args);
+        System.out.println(">>>回答问题");
+        System.out.println();
+        // 第二个分支
+        String[] args2 = {"-e","src/main/java/com/jiedui/test/Exercises.txt","-a","src/main/java/com/jiedui/test/AnswersOfMine.txt"};
+        Main.main(args2);
 
+        // 异常分支
+        System.out.println(">>>故意进入异常分支");
+        Main.main(new String[0]);
+    }
+}
+```
 
+测试结果如下：
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135050082-469586905.png)
+
+覆盖率如下：
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135213880-1173664377.png)
+
+---
+
+生成的文件如下：
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135337242-1475477112.png)
+
+---
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135411864-634365028.png)
+---
+
+---
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135507143-934650986.png)
+
+---
+
+![](https://img2023.cnblogs.com/blog/3274666/202309/3274666-20230928135525226-1099865608.png)
 
 # 六、项目小结
 
